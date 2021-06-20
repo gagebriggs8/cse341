@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pokemon</title>
+</head>
+
+<body>
+    <div>
+        <h1>Pokemon List:</h1>
+    </div>
+    <div>
+        <% pokemonList.forEach( pokemon => { %>
+            <div><p><%=pokemon.name%></p></div>
+        <% }); %>
+    </div>
+    
+    <div>
+        <% if(page != 1) { %>
+            <a href="http://localhost:5000/pokemon/1"><button>First</button></a>
+            <a href="http://localhost:5000/pokemon/<%=parseInt(page) - 1%>"><button>Previous</button></a>
+        <% } %>
+        
+        <button><%=page%></button>
+        
+        <% if(page != 112) { %>
+            <a href="http://localhost:5000/pokemon/<%=parseInt(page) + 1%>"><button>Next</button></a>
+            <a href="http://localhost:5000/pokemon/112"><button>Last</button></a>
+        <% } %>
+    </div>
+</body>
+
+</html>
